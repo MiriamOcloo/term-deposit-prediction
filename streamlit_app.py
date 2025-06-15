@@ -6,7 +6,7 @@ import numpy as np
 st.title("📈 Term Deposit Subscription Predictor")
 
 # Download model from Google Drive
-url = "https://drive.google.com/file/d/1m6N4vYimMUn4qkWnyLPFqdYlihqOZfrH"
+url = "https://drive.google.com/uc?id=1m6N4vYimMUn4qkWnyLPFqdYlihqOZfrH"
 gdown.download(url, "model.pkl", quiet=False)
 
 # Load model
