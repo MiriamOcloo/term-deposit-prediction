@@ -16,3 +16,8 @@ Used: bank-full.csv from UCI ML Repository
 
 ## Final Accuracy: 90%
 ✅ Notebook, model, requirements, and summary available in this repo.
+
+## 🔄 Model File
+The trained model file (`model.pkl`) was too large to upload directly to GitHub.
+
+👉 [Download model.pkl](https://drive.google.com/file/d/1m6N4vYimMUn4qkWnyLPFqdYlihqOZfrH/view?usp=sharing)
