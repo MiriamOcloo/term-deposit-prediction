@@ -26,8 +26,18 @@ age = st.slider("Age", 18, 95)
 duration = st.number_input("Duration of Last Call (in seconds)", min_value=0, value=100)
 balance = st.number_input("Account Balance", min_value=0, value=1000)
 
+import pandas as pd
+
+cols = [
+    'age', 'balance', 'duration', 'job', 'education', 'default',
+    'housing', 'loan', 'contact', 'month', 'day_of_week', 'campaign',
+    'previous', 'poutcome', 'emp_var_rate', 'cons_price_idx', 'cons_conf_idx'
+]
+
+values = [age, balance, duration, 2, 3, 0, 1, 0, 1, 4, 2, 0, 1, 0, -1.8, 92.893, -46.2]
+
+# Create DataFrame
+input_df = pd.DataFrame([values], columns=cols)
+
 # Predict
-if st.button("Predict"):
-    features = np.array([[age, balance, duration, 2, 3, 0, 1, 4, 2, 0, 1, 0, 0, 1, 0]])  # dummy values
-    result = model.predict(features)
-    st.success("✅ Likely to Subscribe" if result[0] == 1 else "❌ Not Likely to Subscribe")
+result = model.predict(input_df)
