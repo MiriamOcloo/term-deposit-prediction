@@ -28,17 +28,33 @@ balance = st.number_input("Account Balance", min_value=0, value=1000)
 
 import pandas as pd
 
+# Define the feature order your model expects
 cols = [
-    'age', 'balance', 'duration', 'job', 'education', 'default',
-    'housing', 'loan', 'contact', 'month', 'day_of_week', 'campaign',
-    'previous', 'poutcome', 'emp_var_rate', 'cons_price_idx', 'cons_conf_idx'
+    'age',
+    'balance',
+    'duration',
+    'job',
+    'education',
+    'default',
+    'housing',
+    'loan',
+    'contact',
+    'month',
+    'day_of_week',
+    'campaign',
+    'previous',
+    'poutcome',
+    'emp_var_rate',
+    'cons_price_idx'
 ]
 
-values = [age, balance, duration, 2, 3, 0, 1, 0, 1, 4, 2, 0, 1, 0, -1.8, 92.893, -46.2]
+# Dummy values matching the 16 expected features
+values = [age, balance, duration, 2, 3, 0, 1, 0, 1, 4, 2, 1, 0, 0, -1.8, 92.9]
 
-# Create DataFrame
 input_df = pd.DataFrame([values], columns=cols)
 
-# Predict
-st.write("Model expects:", model.n_features_in_, "features")
+# Predict using only values
 result = model.predict(input_df.values)
+
+# Display result
+st.success("✅ Likely to Subscribe" if result[0] == 1 else "❌ Not Likely to Subscribe")
