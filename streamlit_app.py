@@ -74,4 +74,4 @@ if st.button("Predict"):
 
     result = model.predict(input_df.values)
 
-    st.success("✅ Likely to Subscribe" if result[0] == 1 else "❌ Not Likely to Subscribe")
+    st.success("Likely to Subscribe" if result[0] == 1 else "Not Likely to Subscribe")
