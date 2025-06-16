@@ -40,4 +40,5 @@ values = [age, balance, duration, 2, 3, 0, 1, 0, 1, 4, 2, 0, 1, 0, -1.8, 92.893,
 input_df = pd.DataFrame([values], columns=cols)
 
 # Predict
+st.write("Model expects:", model.n_features_in_, "features")
 result = model.predict(input_df.values)
